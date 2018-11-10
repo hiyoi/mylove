@@ -19,7 +19,7 @@
 	<embed src="bgm/1.mp3" hidden="true" autostart="true" loop="true">
 	<div id="mainDiv">
 		<div id="content">
-			<div id="loveHeart">
+			<div id="loveHeart" ontouch="switch_text()" onclick="switch_text()">
 				<canvas id="garden"></canvas>
 				<div id="words">
 					<div id="messages">
@@ -61,12 +61,12 @@
 			}, 500);
 
 		}
-		$('#elapseClock').on("click",function(){
+		function switch_text(){
 			var cat = $('#elapseClock').attr('cat');
 			cat = Number(cat);
 			cat = - cat; 
 			$('#elapseClock').attr('cat',cat.toString())
-		});		
+		};		
 
 	</script>
 </body>
