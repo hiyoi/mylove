@@ -21,6 +21,9 @@ $(function () {
 	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
 	$("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
 
+	$('#aplayer').css("top", $("#garden").position().top + 700);
+	$('#aplayer').css("left", $("#garden").position().left + 170);
+
     // renderLoop
     setInterval(function () {
         garden.render();
@@ -110,7 +113,12 @@ function timeElapse(date){
 	if (seconds < 10) {
 		seconds = "0" + seconds;
 	}
-	var result = "<span class=\"digit\">" + days + "</span> days <span class=\"digit\">" + hours + "</span> hours <span class=\"digit\">" + minutes + "</span> minutes <span class=\"digit\">" + seconds + "</span> seconds"; 
+	years = Math.floor(days / 365);
+	if($("#elapseClock").attr('cat')=="1"){
+		var result = "<span class=\"digit\">" + days + "</span> days <span class=\"digit\">" + hours + "</span> hours <span class=\"digit\">" + minutes + "</span> minutes <span class=\"digit\">" + seconds + "</span> seconds"; 
+	}else{
+		var result = "<span class=\"digit\">" + years + "</span> years <span class=\"digit\">" + hours + "</span> hours <span class=\"digit\">" + minutes + "</span> minutes <span class=\"digit\">" + seconds + "</span> seconds"; 
+	}
 	$("#elapseClock").html(result);
 }
 

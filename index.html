@@ -10,12 +10,13 @@
 		}
 	</style>
 	<link href="css/default.css" type="text/css" rel="stylesheet">
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/garden.js"></script>
     <script type="text/javascript" src="js/functions_dev.js"></script>
 </head>
 
 <body>
+	<embed src="bgm/1.mp3" hidden="true" autostart="true" loop="true">
 	<div id="mainDiv">
 		<div id="content">
 			<div id="loveHeart">
@@ -23,7 +24,7 @@
 				<div id="words">
 					<div id="messages">
 						Yn, I have fallen in love with you for
-						<div id="elapseClock"></div>
+						<div id="elapseClock" cat="1"></div>
 					</div>
 					<div id="loveu">
 						Love u forever and ever.<br/>
@@ -60,6 +61,13 @@
 			}, 500);
 
 		}
+		$('#elapseClock').on("click",function(){
+			var cat = $('#elapseClock').attr('cat');
+			cat = Number(cat);
+			cat = - cat; 
+			$('#elapseClock').attr('cat',cat.toString())
+		});		
+
 	</script>
 </body>
 </html>
